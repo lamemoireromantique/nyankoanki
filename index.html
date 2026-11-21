@@ -28,7 +28,7 @@ input,select,textarea{width:100%;padding:12px;border:2px solid #ead7c2;border-ra
 label{font-weight:800;font-size:14px}textarea{min-height:85px;resize:vertical}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .action{padding:13px 17px;border-radius:15px;background:#ffb0c2;font-weight:900;margin:4px 4px 4px 0}.action.alt{background:#a8dafa}.action.greenbtn{background:#b7df80}.action.gray{background:#eee0d2}
-.question{font-size:22px;font-weight:850;line-height:1.55;white-space:pre-wrap}.answer{background:#fff0d9;border-radius:16px;padding:14px;line-height:1.6;margin:12px 0;white-space:pre-wrap}
+.question{font-size:22px;font-weight:850;line-height:1.55;white-space:pre-wrap}.quizcat{display:flex;align-items:center;gap:12px;margin:12px 0;padding:8px;background:#fff0e8;border-radius:18px}.quizcat img{width:104px;height:104px;object-fit:cover;border-radius:16px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.choice{background:#fff;border:2px solid #f0d8bd;border-radius:16px;padding:14px;text-align:left;font-weight:800;min-height:62px}.choice:disabled{opacity:.65}.choice.correct{background:#e5f6d6;border-color:#9dcc72}.choice.wrong{background:#ffe2e6;border-color:#ef8da0}.feedback{padding:12px;border-radius:14px;background:#fff1d8;font-weight:800;margin:10px 0}@media(max-width:520px){.choices{grid-template-columns:1fr}}.answer{background:#fff0d9;border-radius:16px;padding:14px;line-height:1.6;margin:12px 0;white-space:pre-wrap}
 .listitem{background:white;border:1px solid #f0ddc8;border-radius:14px;padding:12px;margin:8px 0}.tag{display:inline-block;background:#ffedf1;border-radius:20px;padding:4px 9px;font-size:12px;margin-right:5px}
 footer{text-align:center;margin-top:18px;font-size:12px;opacity:.7}
 @media(max-width:650px){.hero{grid-template-columns:1fr}.catwrap img{max-height:280px}.actions{grid-template-columns:1fr}.big{min-height:58px}.smallnav{grid-template-columns:repeat(2,1fr)}.row{grid-template-columns:1fr}}
@@ -60,8 +60,8 @@ footer{text-align:center;margin-top:18px;font-size:12px;opacity:.7}
 </main>
 
 <section id="quiz" class="panel hidden">
-<h2 id="quizTitle">今日の復習</h2><div class="note" id="quizCount"></div>
-<div class="question" id="qText"></div>
+<h2 id="quizTitle">今日の復習</h2><div class="note" id="quizCount"></div><div class="quizcat"><img src="kitten.png" alt="いっしょに勉強する子猫"><b id="quizCatMessage">いっしょに考えるにゃ！</b></div>
+<div class="question" id="qText"></div><div id="choiceArea" class="choices"></div><div id="feedback" class="feedback hidden" aria-live="polite"></div>
 <div id="answerArea" class="hidden"><div class="answer"><b>答え</b><div id="aText"></div><hr><b>おぼえるポイント</b><div id="eText"></div></div>
 <p><b>どれくらいできた？</b></p>
 <button class="action greenbtn" onclick="grade('good')">✨ ばっちり！</button>
