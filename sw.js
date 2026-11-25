@@ -1,4 +1,4 @@
-const CACHE='nyanko-v5';
+const CACHE='nyanko-v6';
 const FILES=['./','./index.html','./manifest.webmanifest','./kitten.png','./icon.png','./kitten-rewards.webp'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('nyanko-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
